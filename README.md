@@ -2,13 +2,51 @@
 
 製造設備のセンサーデータから故障リスクを予測する機械学習Webアプリケーションです。
 
-本プロジェクトでは AI4I 2020 Predictive Maintenance Dataset を用いて、設備故障を予測する Random Forest モデルを構築し、Streamlit により誰でも利用できるWebアプリとして実装しました。
+設備の異常を早期に検知し、予防保全（Predictive Maintenance）を支援することを目的として開発しました。
+
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-RandomForest-orange)
+![Streamlit](https://img.shields.io/badge/Streamlit-WebApp-red)
+![GitHub](https://img.shields.io/badge/Git-VersionControl-black)
 
 ---
 
-## 🚀 Overview
+# 📌 Overview
 
-このアプリでは以下のセンサーデータを入力すると、設備故障の確率を予測できます。
+本プロジェクトでは、AI4I 2020 Predictive Maintenance Dataset を用いて製造設備の故障を予測するAIを開発しました。
+
+学習済みモデルをWebアプリ化し、センサーデータを入力するだけで故障確率を確認できます。
+
+---
+
+# 🎯 Purpose
+
+製造設備では突然の故障による生産停止が大きな損失につながります。
+
+本プロジェクトでは
+
+- 故障リスクの可視化
+- 予防保全支援
+- データに基づく保守判断
+
+を目的として機械学習モデルを開発しました。
+
+---
+
+# ✨ Features
+
+- Random Forestによる故障予測
+- StreamlitによるWebアプリ
+- センサーデータ入力
+- 故障確率表示
+- 点検推奨判定
+- Joblibによるモデル保存
+
+---
+
+# 🖥️ Application
+
+以下の入力値から故障確率を予測します。
 
 - Product Type
 - Air Temperature
@@ -17,48 +55,67 @@
 - Torque
 - Tool Wear
 
-学習済みモデルを利用してリアルタイムに推論を行い、故障リスクを分かりやすく表示します。
-
----
-
-# 🖥️ Application
-
-## 入力画面
+## アプリ画面
 
 ![Application](images/app-screen.png)
 
 ---
 
-## 推論結果
-
-![Prediction Result](images/prediction-result.png)
-
----
-
 # 🧠 Machine Learning
 
-## 使用アルゴリズム
+### Algorithm
 
 - Random Forest Classifier
 
-## 前処理
+### Preprocessing
 
 - OneHotEncoder
-- Train/Test Split
+- Train / Test Split
 - Pipeline
-- Joblibによるモデル保存
 
 ---
 
-# 📊 Model Performance
+---
 
-| Metric | Score |
-|---------|-------:|
-| Accuracy | 97.4% |
-| Precision | 58.9% |
-| Recall | 77.9% |
-| F1-score | 67.1% |
-| ROC-AUC | 0.962 |
+# 📊 Model Evaluation
+
+## Confusion Matrix
+
+![Confusion Matrix](images/confusion-matrix.png)
+
+## ROC Curve
+
+![ROC Curve](images/roc-curve.png)
+
+## Feature Importance
+
+![Feature Importance](images/feature-importance.png)
+
+---
+
+# 📈 Evaluation
+
+## Confusion Matrix
+
+![Confusion Matrix](images/confusion-matrix.png)
+
+---
+
+## ROC Curve
+
+![ROC Curve](images/roc-curve.png)
+
+---
+
+## Feature Importance
+
+![Feature Importance](images/feature-importance.png)
+
+---
+
+# 🏗️ System Architecture
+
+![Architecture](images/architecture.png)
 
 ---
 
@@ -76,19 +133,19 @@ predictive-maintenance-ai
 │
 ├── images
 │   ├── app-screen.png
-│   └── prediction-result.png
+│   ├── confusion-matrix.png
+│   ├── roc-curve.png
+│   ├── feature-importance.png
+│   └── architecture.png
 │
 ├── models
-│   └── model.joblib
 │
 ├── src
 │   ├── train.py
 │   ├── predict.py
-│   ├── features.py
-│   └── __init__.py
+│   └── features.py
 │
 ├── tests
-│   └── test_features.py
 │
 ├── README.md
 └── requirements.txt
@@ -98,25 +155,25 @@ predictive-maintenance-ai
 
 # ⚙️ Tech Stack
 
-### Language
+## Programming Language
 
 - Python
 
-### Machine Learning
+## Machine Learning
 
 - scikit-learn
 - pandas
 - NumPy
 
-### Visualization
+## Visualization
 
 - Matplotlib
 
-### Web Application
+## Web Application
 
 - Streamlit
 
-### Development
+## Development
 
 - Git
 - GitHub
@@ -124,7 +181,7 @@ predictive-maintenance-ai
 
 ---
 
-# ▶️ How to Run
+# 🚀 How to Run
 
 ```bash
 git clone https://github.com/makun212/predictive-maintenance-ai-2026.git
@@ -152,23 +209,7 @@ https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
 ---
 
-# 💡 What I Learned
-
-このプロジェクトを通して以下のスキルを身につけました。
-
-- 機械学習モデルの構築
-- データ前処理
-- 特徴量エンジニアリング
-- モデル評価
-- StreamlitによるWebアプリ開発
-- Joblibによるモデル保存
-- Git / GitHub を利用したバージョン管理
-
----
-
-# 🔮 Future Improvements
-
-今後は以下の機能追加を予定しています。
+# 💡 Future Improvements
 
 - SHAPによる予測根拠の可視化
 - XGBoostとの性能比較
@@ -179,15 +220,27 @@ https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
 ---
 
-# 👤 Author
+# 👨‍💻 What I Learned
+
+このプロジェクトを通して以下を学びました。
+
+- 機械学習モデルの構築
+- データ前処理
+- モデル評価
+- Webアプリ開発
+- Git/GitHubによるバージョン管理
+
+---
 
 
 
 Tokyo University of Science
 
+Faculty of Science and Technology
+
 Department of Information and Computer Science
 
-### Interests
+Interests
 
 - Machine Learning
 - Data Science

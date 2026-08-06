@@ -181,7 +181,7 @@ https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
 # 👤 Author
 
-**博政 尾方**
+
 
 Tokyo University of Science
 

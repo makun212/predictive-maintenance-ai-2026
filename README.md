@@ -232,7 +232,11 @@ https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
 ---
 
+## SHAP Summary
 
+SHAPを用いて、各特徴量が故障予測へ与える影響を可視化しています。
+
+![SHAP Summary](images/shap-summary.png)
 
 Tokyo University of Science
 

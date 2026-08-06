@@ -1,3 +1,17 @@
+# 🚀 Demo
+
+## Application
+
+![Application](images/app-screen.png)
+
+## Prediction
+
+![Prediction](images/prediction-result.png)
+
+## SHAP
+
+![SHAP](images/shap-summary.png)
+
 # ⚙️ Predictive Maintenance AI
 
 製造設備のセンサーデータから故障リスクを予測する機械学習Webアプリケーションです。
@@ -41,7 +55,7 @@
 - 故障確率表示
 - 点検推奨判定
 - Joblibによるモデル保存
-
+- SHAPによる予測根拠の可視化
 ---
 
 # 🖥️ Application
@@ -63,17 +77,21 @@
 
 # 🧠 Machine Learning
 
-### Algorithm
+## Model
 
 - Random Forest Classifier
 
-### Preprocessing
+## Training
 
+- Train / Test Split (80/20)
 - OneHotEncoder
-- Train / Test Split
-- Pipeline
+- Scikit-learn Pipeline
+- Joblib Model Persistence
 
----
+## Explainable AI
+
+- SHAP (SHapley Additive exPlanations)
+- Feature Importance Analysis
 
 ---
 
@@ -93,23 +111,9 @@
 
 ---
 
-# 📈 Evaluation
 
-## Confusion Matrix
 
-![Confusion Matrix](images/confusion-matrix.png)
 
----
-
-## ROC Curve
-
-![ROC Curve](images/roc-curve.png)
-
----
-
-## Feature Importance
-
-![Feature Importance](images/feature-importance.png)
 
 ---
 
@@ -200,23 +204,20 @@ streamlit run app/app.py
 ```
 
 ---
-
 # 📄 Dataset
 
-AI4I 2020 Predictive Maintenance Dataset
+This project uses the **AI4I 2020 Predictive Maintenance Dataset**
+provided by the **UCI Machine Learning Repository**.
 
 https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
----
-
 # 💡 Future Improvements
 
-- SHAPによる予測根拠の可視化
-- XGBoostとの性能比較
-- FastAPIによるAPI化
-- Docker対応
-- Streamlit Cloudへのデプロイ
-- LLMを利用した保守レポート自動生成
+- CSV Batch Prediction
+- FastAPI
+- Docker
+- AWS Deployment
+- LLM Maintenance Report
 
 ---
 
@@ -234,7 +235,11 @@ https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
 
 ## SHAP Summary
 
-SHAPを用いて、各特徴量が故障予測へ与える影響を可視化しています。
+SHAP (SHapley Additive exPlanations) を利用して、
+モデルが故障と判断した理由を可視化しています。
+
+これにより、単なる予測だけでなく、
+各特徴量が予測結果へ与える影響も確認できます。
 
 ![SHAP Summary](images/shap-summary.png)
 
